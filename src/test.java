@@ -7,13 +7,13 @@ public class test {
 		PQ q1 = new PQ();
 		PQ q2 = new PQ();
 
-		q1.enqueueMax("Process 1 ", 10);
-		q1.enqueueMax("Process 2 ", 20);
-		q1.enqueueMax("Process 3 ", 30);
-		q1.enqueueMax("Process 4 ", 40);
-		q1.enqueueMax("Process 5 ", 54);
-		q1.enqueueMax("Process 6 ", 120);
-		q1.enqueueMax("Process 7 ", 3);
+		q1.enqueueMax("Process 1 ", 1);
+		q1.enqueueMax("Process 2 ", 1);
+		q1.enqueueMax("Process 3 ", 1);
+		q1.enqueueMax("Process 4 ", 1);
+		q1.enqueueMax("Process 5 ", 1);
+		q1.enqueueMax("Process 6 ", 1);
+		q1.enqueueMax("Process 7 ", 1);
 		q1.enqueueMax("Process 8 ", 1);
 		
 		
