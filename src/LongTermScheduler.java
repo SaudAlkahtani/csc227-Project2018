@@ -13,6 +13,7 @@ public class LongTermScheduler {
 		this.readyQueue = new PQ();
 		this.waitingQueue = new PQ();
 	}
+	
 
 	public PQ loadToReadyQueue() {
 		PQ<PCB> tempQ = new PQ();
