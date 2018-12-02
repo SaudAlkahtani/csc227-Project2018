@@ -6,17 +6,18 @@ public class LongTermScheduler {
 	public PQ<PCB> readyQueue;
 	public PQ<PCB> waitingQueue;
 	public PQ<PCB> jobQueue;
+	public JobQueue obj ;
 
 	public LongTermScheduler() {
-		this.jobQueue = JobQueue.getProcesses();
+		this.jobQueue = obj.getProcesses();
 		this.availableSize = 144;
-		this.readyQueue = new PQ();
-		this.waitingQueue = new PQ();
+		this.readyQueue = new PQ<PCB>();
+		this.waitingQueue = new PQ<PCB>();
 	}
 	
 
 	public PQ loadToReadyQueue() {
-		PQ<PCB> tempQ = new PQ();
+		PQ<PCB> tempQ = new PQ<PCB>();
 		// check if both Queue empty
 		if (jobQueue.length() <= 0 && waitingQueue.length() <= 0) {
 			return this.readyQueue;
