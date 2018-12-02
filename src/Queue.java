@@ -69,5 +69,11 @@ public class Queue<T> {
 			tail = null;
 		return x;
 	}
+	
+	public T peek() {
+
+		return head.data;
+
+	}
 
 }
