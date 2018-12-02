@@ -2,11 +2,11 @@ class PQNode<T> {
 	public T data;
 	public int priority;
 	public PQNode<T> next;
-	
+
 	public PQNode() {
 		next = null;
 	}
-	
+
 	public PQNode(T e, int p) {
 		data = e;
 		priority = p;
@@ -35,11 +35,8 @@ class PQNode<T> {
 	public void setNext(PQNode<T> next) {
 		this.next = next;
 	}
-	
-	
 
 }
-  
 
 public class PQ<T> {
 	private int size;
@@ -58,7 +55,7 @@ public class PQ<T> {
 		return false;
 	}
 
-	public void enqueueMin(T e, int pty) {
+	public void enqueue(T e, int pty) {
 		PQNode<T> tmp = new PQNode<T>(e, pty);
 		if ((size == 0) || (pty <= head.priority)) {
 			tmp.next = head;
@@ -76,23 +73,6 @@ public class PQ<T> {
 		size++;
 	}
 
-	public void enqueueMax(T e, int pty) {
-		PQNode<T> tmp = new PQNode<T>(e, pty);
-		if ((size == 0) || (pty > head.priority)) {
-			tmp.next = head;
-			head = tmp;
-		} else {
-			PQNode<T> p = head;
-			PQNode<T> q = null;
-			while ((p != null) && (pty <= p.priority)) {
-				q = p;
-				p = p.next;
-			}
-			tmp.next = p;
-			q.next = tmp;
-		}
-		size++;
-	}
 
 	public PQNode<T> serve() {
 		PQNode<T> node = head;
@@ -103,15 +83,21 @@ public class PQ<T> {
 	}
 
 	public void printall() {
-		int i = 0 ;
+		int i = 0;
 		PQNode<T> temp = head;
-		
-		while (i <size) {
+
+		while (i < size) {
 			System.out.println(temp.data + " , " + temp.priority);
 			temp = temp.next;
 			i++;
 
 		}
+	}
+
+	public PQNode<T> peek() {
+
+		return head;
+
 	}
 
 }

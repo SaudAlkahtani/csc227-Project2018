@@ -6,8 +6,8 @@ public class PCB {
 	private int CPUNum;
 	private int IONum;
 	private int waitNum;
-	private int CPUSum ;
-	private int IOSum ;
+	private int CPUSum;
+	private int IOSum;
 
 	public PCB() {
 		this.pid = 0;
@@ -15,8 +15,8 @@ public class PCB {
 		this.Cycles = new Queue<Cycle>();
 		this.CPUNum = 0;
 		this.CPUSum = 0;
-		this.IONum  = 0;
-		this.IOSum  = 0;
+		this.IONum = 0;
+		this.IOSum = 0;
 	}
 
 	public PCB(int pid) {
@@ -25,16 +25,33 @@ public class PCB {
 		this.Cycles = new Queue<Cycle>();
 		this.CPUNum = 0;
 		this.CPUSum = 0;
-		this.IONum  = 0;
-		this.IOSum  = 0;
+		this.IONum = 0;
+		this.IOSum = 0;
 	}
 
-	public void addCicle(int cpuBurst, int memory, int IOBurst) {
-		
+	public void addCycle(int cpuBurst, int memory, int IOBurst) {
+
 		Cycle c = new Cycle(cpuBurst, memory, IOBurst);
 		this.Cycles.enqueue(c);
-		this.CPUSum+=cpuBurst ;
-		this.IOSum+= IOBurst  ;
+		this.CPUSum += cpuBurst;
+		this.IOSum += IOBurst;
+	}
+
+	public void printall() {
+		System.out.println("Process ID "+ pid);
+		Queue<Cycle> temp = new Queue<Cycle>();
+		
+		while (Cycles.length() != 0) {
+			Cycle a = Cycles.serve();
+			System.out.println("CPU burst: " + a.getCpuBurst() + " Memory : "+ a.getMemory()+ " IO : " + a.getIOBurst() );
+			temp.enqueue(a);
+		}
+		
+		while(temp.length()!= 0 )
+			this.Cycles.enqueue(temp.serve());
+		
+		System.out.println("---------------------------------------------");
+		System.out.println();
 	}
 
 	public Queue<Cycle> getCycles() {
@@ -92,8 +109,15 @@ public class PCB {
 	public int getIOSum() {
 		return IOSum;
 	}
+
+	public int getFirstMemory() {
+		return Cycles.peek().getMemory();
+	}
 	
-	
+	public Cycle serveCycle(){
+		return Cycles.serve();
+	}
+
 	
 	
 }

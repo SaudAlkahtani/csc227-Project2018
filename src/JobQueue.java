@@ -43,15 +43,15 @@ public class JobQueue {
 				cpuBurst = Integer.parseInt(PCBInfo[1]);
 				memory = Integer.parseInt(PCBInfo[2]);
 				IOBurst = Integer.parseInt(PCBInfo[3]);
-				pcb1.addCicle(cpuBurst, memory, IOBurst);// Cycle 1
+				pcb1.addCycle(cpuBurst, memory, IOBurst);// Cycle 1
 				cpuBurst = Integer.parseInt(PCBInfo[4]);
 				memory = Integer.parseInt(PCBInfo[5]);
 				IOBurst = Integer.parseInt(PCBInfo[6]);
-				pcb1.addCicle(cpuBurst, memory, IOBurst);// Cycle 2
+				pcb1.addCycle(cpuBurst, memory, IOBurst);// Cycle 2
 				cpuBurst = Integer.parseInt(PCBInfo[7]);
 				memory = Integer.parseInt(PCBInfo[8]);
 				IOBurst = Integer.parseInt(PCBInfo[9]);
-				pcb1.addCicle(cpuBurst, memory, IOBurst);// Cycle 3
+				pcb1.addCycle(cpuBurst, memory, IOBurst);// Cycle 3
 				if (PCBInfo.length == 10) {
 					JobQueue.enqueue(pcb1);
 					continue;
@@ -61,14 +61,14 @@ public class JobQueue {
 				cpuBurst = Integer.parseInt(PCBInfo[10]);
 				memory = Integer.parseInt(PCBInfo[11]);
 				IOBurst = Integer.parseInt(PCBInfo[12]);
-				pcb1.addCicle(cpuBurst, memory, IOBurst);// Cycle 4
+				pcb1.addCycle(cpuBurst, memory, IOBurst);// Cycle 4
 				
 				if (PCBInfo.length == 14) { // Has only 5 Cycles
 					//System.out.println("--------5Cycles------------");
 					cpuBurst = Integer.parseInt(PCBInfo[13]);
 					memory = 0;
 					IOBurst = 0;
-					pcb1.addCicle(cpuBurst, memory, IOBurst);// Cycle 5
+					pcb1.addCycle(cpuBurst, memory, IOBurst);// Cycle 5
 					
 				}
 				if (PCBInfo.length == 17) { // if it has a 6th cycles
@@ -76,11 +76,11 @@ public class JobQueue {
 					cpuBurst = Integer.parseInt(PCBInfo[13]);
 					memory = Integer.parseInt(PCBInfo[14]);
 					IOBurst = Integer.parseInt(PCBInfo[15]);
-					pcb1.addCicle(cpuBurst, memory, IOBurst);// Cycle 5
+					pcb1.addCycle(cpuBurst, memory, IOBurst);// Cycle 5
 					cpuBurst = Integer.parseInt(PCBInfo[16]);
 					memory = 0;
 					IOBurst = 0;
-					pcb1.addCicle(cpuBurst, memory, IOBurst);// Cycle 6
+					pcb1.addCycle(cpuBurst, memory, IOBurst);// Cycle 6
 					
 
 				}
