@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class JobQueue {
-	private static final String FILENAME = "src//cpumemoryio.txt";
+	private static final String FILENAME = "cpumemoryio.txt";
 	private BufferedReader br;
 	private FileReader fr;
 	private String sCurrentLine;

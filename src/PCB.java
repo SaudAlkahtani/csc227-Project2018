@@ -114,6 +114,11 @@ public class PCB {
 		return Cycles.peek().getMemory();
 	}
 	
+	public int getFirstCPU() {
+		return Cycles.peek().getCpuBurst();
+	}
+
+	
 	public Cycle serveCycle(){
 		return Cycles.serve();
 	}
