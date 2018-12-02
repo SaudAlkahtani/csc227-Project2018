@@ -37,6 +37,14 @@ public class PCB {
 		this.IOSum+= IOBurst  ;
 	}
 
+	public Queue<Cycle> getCycles() {
+		return Cycles;
+	}
+
+	public void setCycles(Queue<Cycle> cycles) {
+		Cycles = cycles;
+	}
+
 	public String getStatus() {
 		return status;
 	}

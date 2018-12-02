@@ -3,50 +3,94 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class JobQueue  {
+public class JobQueue {
 	private static final String FILENAME = "src//cpumemoryio.txt";
 	private BufferedReader br;
 	private FileReader fr;
 	private String sCurrentLine;
-	private PQ<PCB> JobQueue;
+	private Queue<PCB> JobQueue;
 
 	public JobQueue() {
 		BufferedReader br = null;
 		FileReader fr = null;
-		JobQueue= new PQ<PCB>();
+		JobQueue = new Queue<PCB>();
 
 	}
 
-	private PQ<PCB> loadToJobQueue() throws FileNotFoundException {
-		
+	private Queue<PCB> loadToJobQueue() throws FileNotFoundException {
 
 		try {
 
 			br = new BufferedReader(new FileReader(FILENAME));
 			fr = new FileReader(FILENAME);
 			br = new BufferedReader(fr);
-			int pid=0;
-			int cpuBurst=0;
-			int memory=0;
-			int io=0;
-			 
+			int pid = 0;
+			int cpuBurst = 0;
+			int memory = 0;
+			int IOBurst = 0;
 
 			String sCurrentLine;
-			br.readLine(); //first Line "Name CPU Memory IO etc..
+			br.readLine(); // first Line "Name CPU Memory IO " etc..
+			// Cycle contains:
+			// cpuBurst, memory, IOBurst
 			while ((sCurrentLine = br.readLine()) != null) {
-				//System.out.println(sCurrentLine);
+				
+				// System.out.println(sCurrentLine);
 				String[] PCBInfo = sCurrentLine.split("	");
-				pid= Integer.parseInt(PCBInfo[0]);
-				cpuBurst= Integer.parseInt(PCBInfo[1]);
-				memory=Integer.parseInt(PCBInfo[2]);
-				io=Integer.parseInt(PCBInfo[3]);
+				//System.out.println("Length: " + PCBInfo.length);
+				pid = Integer.parseInt(PCBInfo[0]); // Name of Process
+				PCB pcb1 = new PCB(pid);
+				cpuBurst = Integer.parseInt(PCBInfo[1]);
+				memory = Integer.parseInt(PCBInfo[2]);
+				IOBurst = Integer.parseInt(PCBInfo[3]);
+				pcb1.addCicle(cpuBurst, memory, IOBurst);// Cycle 1
+				cpuBurst = Integer.parseInt(PCBInfo[4]);
+				memory = Integer.parseInt(PCBInfo[5]);
+				IOBurst = Integer.parseInt(PCBInfo[6]);
+				pcb1.addCicle(cpuBurst, memory, IOBurst);// Cycle 2
+				cpuBurst = Integer.parseInt(PCBInfo[7]);
+				memory = Integer.parseInt(PCBInfo[8]);
+				IOBurst = Integer.parseInt(PCBInfo[9]);
+				pcb1.addCicle(cpuBurst, memory, IOBurst);// Cycle 3
+				if (PCBInfo.length == 10) {
+					JobQueue.enqueue(pcb1);
+					continue;
+				}
+					
+
+				cpuBurst = Integer.parseInt(PCBInfo[10]);
+				memory = Integer.parseInt(PCBInfo[11]);
+				IOBurst = Integer.parseInt(PCBInfo[12]);
+				pcb1.addCicle(cpuBurst, memory, IOBurst);// Cycle 4
 				
-				PCB process = new PCB(pid,cpuBurst,memory,io);
-				JobQueue.enqueueMin(process, 1);
-				
+				if (PCBInfo.length == 14) { // Has only 5 Cycles
+					//System.out.println("--------5Cycles------------");
+					cpuBurst = Integer.parseInt(PCBInfo[13]);
+					memory = 0;
+					IOBurst = 0;
+					pcb1.addCicle(cpuBurst, memory, IOBurst);// Cycle 5
+					
+				}
+				if (PCBInfo.length == 17) { // if it has a 6th cycles
+				//	System.out.println("-------------6Cycles---------------");
+					cpuBurst = Integer.parseInt(PCBInfo[13]);
+					memory = Integer.parseInt(PCBInfo[14]);
+					IOBurst = Integer.parseInt(PCBInfo[15]);
+					pcb1.addCicle(cpuBurst, memory, IOBurst);// Cycle 5
+					cpuBurst = Integer.parseInt(PCBInfo[16]);
+					memory = 0;
+					IOBurst = 0;
+					pcb1.addCicle(cpuBurst, memory, IOBurst);// Cycle 6
+					
+
+				}
+
+				JobQueue.enqueue(pcb1);
 			}
 
-		} catch (IOException e) {
+		} catch (
+
+		IOException e) {
 
 			e.printStackTrace();
 
@@ -69,12 +113,12 @@ public class JobQueue  {
 		return JobQueue;
 
 	}
-	
-	public PQ<PCB> getProcesses() {
+
+	public Queue<PCB> getProcesses() {
 		try {
 			return this.loadToJobQueue();
 		} catch (FileNotFoundException e) {
-			
+
 			System.err.println("File not found!!");
 		}
 		return JobQueue;
