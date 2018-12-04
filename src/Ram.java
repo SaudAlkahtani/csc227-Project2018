@@ -108,9 +108,9 @@ public class Ram {
 		return this.readyQueue;
 	}
 
-	public boolean isJQEmpty() {
+	public boolean isEmpty() {
 
-		if (jobQueue.length() == 0) {
+		if (jobQueue.length() == 0 && waitingQueue.length() == 0 && readyQueue.length() == 0) {
 			return true;
 		}
 
