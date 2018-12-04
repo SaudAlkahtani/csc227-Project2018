@@ -8,6 +8,7 @@ public class PCB {
 	private int waitNum;
 	private int CPUSum;
 	private int IOSum;
+	private int memorySum ;
 
 	public PCB() {
 		this.pid = 0;
@@ -132,6 +133,14 @@ public class PCB {
 	}
 	public void increaseIOSum(int IOBurst) {
 		this.IOSum+= IOBurst;
+	}
+
+	public int getMemorySum() {
+		return memorySum;
+	}
+
+	public void increaseMemorySum(int memorySum) {
+		this.memorySum += memorySum;
 	}
 
 
