@@ -14,39 +14,46 @@ public class Ram {
 		this.availableSize = 144;
 		this.readyQueue = new PQ<PCB>();
 		this.waitingQueue = new Queue<PCB>();
-		this.IOQueue =new Queue<PCB>();
+		this.IOQueue = new Queue<PCB>();
+	}
+
+	public void deleteMaxMemoryProcess() {
+		
 	}
 
 	public PQ<PCB> loadToReadyQueue() {
-
-		if (availableSize == 0) {
-			sleep();
-		}
-
+		Queue<PCB> temp = new Queue<PCB>();
 		// check if both Queue empty
 		if (jobQueue.length() <= 0 && waitingQueue.length() <= 0) {
 			return this.readyQueue;
 		}
 		// Check Waiting queue first
-		int i =1 ;
+		int i = waitingQueue.length();
 		while (waitingQueue.length() > 0) {
 
-			PCB process = waitingQueue.peek();
+			PCB process = waitingQueue.serve();
 
 			if (process.getFirstMemory() <= availableSize) {
 
-				PCB waitingProcess = waitingQueue.serve();
-				availableSize = availableSize - waitingProcess.getFirstMemory();
-				waitingProcess.setStatus("Ready");
-				readyQueue.enqueue(waitingProcess, waitingProcess.getFirstCPU());
+				availableSize = availableSize - process.getFirstMemory();
+				process.setStatus("Ready");
+				readyQueue.enqueue(process, process.getFirstCPU());
+			} else {
+				temp.enqueue(process);
 			}
 			
-			
+		}
 
+		if (i == temp.length()) { // a Deadlock happened
+
+		} else {
+			while (temp.length() != 0)
+				waitingQueue.enqueue(temp.serve());
 		}
 
 		while (jobQueue.length() != 0 && availableSize != 0) { // if the memory
 																// is not enough
+
 			PCB process = jobQueue.serve();
 
 			if (process.getFirstMemory() <= availableSize) {
@@ -63,15 +70,6 @@ public class Ram {
 		}
 
 		return this.readyQueue;
-	}
-
-	public void sleep() {
-
-		try {
-			Thread.sleep(100);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 	}
 
 }

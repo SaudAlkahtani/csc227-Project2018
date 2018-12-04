@@ -38,23 +38,24 @@ public class PCB {
 	}
 
 	public void printall() {
-		System.out.println("Process ID "+ pid);
+		System.out.println("Process ID " + pid);
 		Queue<Cycle> temp = new Queue<Cycle>();
-		
+
 		while (Cycles.length() != 0) {
 			Cycle a = Cycles.serve();
-			System.out.println("CPU burst: " + a.getCpuBurst() + " Memory : "+ a.getMemory()+ " IO : " + a.getIOBurst() );
+			System.out.println(
+					"CPU burst: " + a.getCpuBurst() + " Memory : " + a.getMemory() + " IO : " + a.getIOBurst());
 			temp.enqueue(a);
 		}
-		
-		while(temp.length()!= 0 )
+
+		while (temp.length() != 0)
 			this.Cycles.enqueue(temp.serve());
-		
+
 		System.out.println("---------------------------------------------");
 		System.out.println();
 	}
-	
-	public Cycle getFirstCycle(){
+
+	public Cycle getFirstCycle() {
 		return this.Cycles.serve();
 	}
 
@@ -117,16 +118,21 @@ public class PCB {
 	public int getFirstMemory() {
 		return Cycles.peek().getMemory();
 	}
-	
+
 	public int getFirstCPU() {
 		return Cycles.peek().getCpuBurst();
 	}
 
-	
-	public Cycle serveCycle(){
+	public Cycle serveCycle() {
 		return Cycles.serve();
 	}
 
-	
-	
+	public void increaseCPUSum(int CPUBurst) {
+		this.CPUSum += CPUBurst ;
+	}
+	public void increaseIOSum(int IOBurst) {
+		this.IOSum+= IOBurst;
+	}
+
+
 }
