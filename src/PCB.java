@@ -53,6 +53,10 @@ public class PCB {
 		System.out.println("---------------------------------------------");
 		System.out.println();
 	}
+	
+	public Cycle getFirstCycle(){
+		return this.Cycles.serve();
+	}
 
 	public Queue<Cycle> getCycles() {
 		return Cycles;
