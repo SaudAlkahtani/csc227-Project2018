@@ -53,6 +53,10 @@ public class PCB {
 		System.out.println("---------------------------------------------");
 		System.out.println();
 	}
+	
+	public Cycle getFirstCycle(){
+		return this.Cycles.serve();
+	}
 
 	public Queue<Cycle> getCycles() {
 		return Cycles;
@@ -113,6 +117,11 @@ public class PCB {
 	public int getFirstMemory() {
 		return Cycles.peek().getMemory();
 	}
+	
+	public int getFirstCPU() {
+		return Cycles.peek().getCpuBurst();
+	}
+
 	
 	public Cycle serveCycle(){
 		return Cycles.serve();
