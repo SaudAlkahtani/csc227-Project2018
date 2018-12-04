@@ -1,16 +1,23 @@
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class test {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
-		JobQueue j1= new JobQueue();
-		Queue<PCB> jobs = j1.getProcesses();
-		Queue<PCB> temp = new Queue<PCB>();
-
-		PCB process1 = new PCB(1);
-		PCB process2 = new PCB(2);
-
+//		JobQueue j1= new JobQueue();
+//		Queue<PCB> jobs = j1.getProcesses();
+//		Queue<PCB> temp = new Queue<PCB>();
+//
+//		PCB process1 = new PCB(1);
+//		PCB process2 = new PCB(2);
+		OS os= new OS();
+		try {
+			os.WriteToFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 //		
 //		
 //		Queue<PCB> process = 
@@ -30,13 +37,13 @@ public class test {
 //		jobs.enqueue(process1);
 //		jobs.enqueue(process2);
 
-		PCB a;
-
-		while (jobs.length() != 0) {
-			a = jobs.serve();
-			a.printall();
-			temp.enqueue(a);
-
-		}
+//		PCB a;
+//
+//		while (jobs.length() != 0) {
+//			a = jobs.serve();
+//			a.printall();
+//			temp.enqueue(a);
+//
+//		}
 	}
 }
