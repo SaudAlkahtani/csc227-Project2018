@@ -117,7 +117,7 @@ public class Ram {
 		return false;
 	}
 
-	public void addToRadeyQueue(PCB process) {
+	public void addToReadyQueue(PCB process) {
 
 		while (jobQueue.length() != 0 && availableSize != 0) {
 
