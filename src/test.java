@@ -1,4 +1,5 @@
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class test {
 
@@ -7,8 +8,21 @@ public class test {
 //		JobQueue j1= new JobQueue();
 //		Queue<PCB> jobs = j1.getProcesses();
 //		Queue<PCB> temp = new Queue<PCB>();
+<<<<<<< HEAD
+//
+//		PCB process1 = new PCB(1);
+//		PCB process2 = new PCB(2);
+		OS os= new OS();
+		try {
+			os.WriteToFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+=======
 
 
+>>>>>>> branch 'master' of https://github.com/SaudAlkahtani/csc227-Project2018.git
 //		
 //		
 //		Queue<PCB> process = 
@@ -39,6 +53,16 @@ public class test {
 		jobs.enqueue(process1);
 		jobs.enqueue(process2);
 
+<<<<<<< HEAD
+//		PCB a;
+//
+//		while (jobs.length() != 0) {
+//			a = jobs.serve();
+//			a.printall();
+//			temp.enqueue(a);
+//
+//		}
+=======
 		
 		jobs.peek().printall();
 		
@@ -54,5 +78,6 @@ public class test {
 		
 
 				
+>>>>>>> branch 'master' of https://github.com/SaudAlkahtani/csc227-Project2018.git
 	}
 }
