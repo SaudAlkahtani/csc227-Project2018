@@ -8,7 +8,11 @@ public class PCB {
 	private int waitNum;
 	private int CPUSum;
 	private int IOSum;
-	private int memorySum ;
+	private int memorySum;
+	private int CPUstartTime;
+	private int CPUendTime;
+	private int readyQueueTime;
+	private int endTime;
 
 	public PCB() {
 		this.pid = 0;
@@ -18,6 +22,11 @@ public class PCB {
 		this.CPUSum = 0;
 		this.IONum = 0;
 		this.IOSum = 0;
+		this.CPUstartTime = 0;
+		this.CPUendTime = 0;
+		this.readyQueueTime = 0;
+		this.endTime = 0;
+
 	}
 
 	public PCB(int pid) {
@@ -28,14 +37,18 @@ public class PCB {
 		this.CPUSum = 0;
 		this.IONum = 0;
 		this.IOSum = 0;
+		this.CPUstartTime = 0;
+		this.CPUendTime = 0;
+		this.readyQueueTime = 0;
+		this.endTime = 0;
+
 	}
 
 	public void addCycle(int cpuBurst, int memory, int IOBurst) {
 
 		Cycle c = new Cycle(cpuBurst, memory, IOBurst);
 		this.Cycles.enqueue(c);
-		this.CPUSum += cpuBurst;
-		this.IOSum += IOBurst;
+
 	}
 
 	public void printall() {
@@ -129,10 +142,11 @@ public class PCB {
 	}
 
 	public void increaseCPUSum(int CPUBurst) {
-		this.CPUSum += CPUBurst ;
+		this.CPUSum += CPUBurst;
 	}
+
 	public void increaseIOSum(int IOBurst) {
-		this.IOSum+= IOBurst;
+		this.IOSum += IOBurst;
 	}
 
 	public int getMemorySum() {
@@ -143,5 +157,36 @@ public class PCB {
 		this.memorySum += memorySum;
 	}
 
+	public int getCPUstartTime() {
+		return CPUstartTime;
+	}
+
+	public void setCPUstartTime(int cPUstartTime) {
+		CPUstartTime = cPUstartTime;
+	}
+
+	public int getCPUendTime() {
+		return CPUendTime;
+	}
+
+	public void setCPUendTime(int cPUendTime) {
+		CPUendTime = cPUendTime;
+	}
+
+	public int getReadyQueueTime() {
+		return readyQueueTime;
+	}
+
+	public void setReadyQueueTime(int readyQueueTime) {
+		this.readyQueueTime = readyQueueTime;
+	}
+
+	public int getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(int endTime) {
+		this.endTime = endTime;
+	}
 
 }
