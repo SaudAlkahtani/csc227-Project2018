@@ -41,7 +41,7 @@ public class JobQueue {
 				pid = Integer.parseInt(PCBInfo[0]); // Name of Process
 				PCB pcb1 = new PCB(pid);
 				cpuBurst = Integer.parseInt(PCBInfo[1]);
-				memory = Integer.parseInt(PCBInfo[2]);
+				memory = Math.abs(Integer.parseInt(PCBInfo[2]));
 				IOBurst = Integer.parseInt(PCBInfo[3]);
 				pcb1.addCycle(cpuBurst, memory, IOBurst);// Cycle 1
 				cpuBurst = Integer.parseInt(PCBInfo[4]);
