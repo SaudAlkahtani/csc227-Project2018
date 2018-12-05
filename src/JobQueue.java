@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class JobQueue {
-	private static final String FILENAME = "cpumemoryio.txt";
+	private static final String FILENAME = "src//cpumemoryio.txt";
 	private BufferedReader br;
 	private FileReader fr;
 	private String sCurrentLine;
@@ -18,7 +18,7 @@ public class JobQueue {
 	}
 
 	private Queue<PCB> loadToJobQueue() throws FileNotFoundException {
-
+System.out.println("in load to jobqueue");
 		try {
 
 			br = new BufferedReader(new FileReader(FILENAME));
@@ -28,12 +28,13 @@ public class JobQueue {
 			int cpuBurst = 0;
 			int memory = 0;
 			int IOBurst = 0;
+			int counter=0;
 
 			String sCurrentLine;
 			br.readLine(); // first Line "Name CPU Memory IO " etc..
 			// Cycle contains:
 			// cpuBurst, memory, IOBurst
-			while ((sCurrentLine = br.readLine()) != null) {
+			while ((sCurrentLine = br.readLine()) != null && counter!=1) {
 				
 				// System.out.println(sCurrentLine);
 				String[] PCBInfo = sCurrentLine.split("	");
@@ -86,6 +87,7 @@ public class JobQueue {
 				}
 
 				JobQueue.enqueue(pcb1);
+				counter++;
 			}
 
 		} catch (
@@ -110,6 +112,7 @@ public class JobQueue {
 
 			}
 		}
+		
 		return JobQueue;
 
 	}

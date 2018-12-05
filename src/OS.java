@@ -6,6 +6,30 @@ import java.io.BufferedReader;
 
 public class OS {
 
+	public static void main(String args[]) {
+
+		System.out.println("Welcome to our program!");
+		System.out.println("This program will simulate single core processer.");
+		
+		Ram r1 = new Ram();
+
+		CPU cpu1 = new CPU();
+		cpu1.runCpu();
+		Queue<PCB> jobs = cpu1.getRam().getFinshedProcesses();
+		
+		
+		//System.out.println("Finished: " + jobs.length());
+		PCB b = jobs.serve();
+		System.out.println(b.getReadyQueueTime());
+		System.out.println(b.getCPUNum());
+		System.out.println(b.getCPUSum());
+		
+		
+//		if(r1.getFinshedProcesses().length()==50) {
+//			
+//		}
+	}
+
 	public void WriteToFile() throws IOException {
 		try {
 			// Sample 01: Open the FileWriter, Buffered Writer

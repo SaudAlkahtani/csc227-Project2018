@@ -86,7 +86,7 @@ public class PQ<T> {
 		int i = 0;
 		PQNode<T> temp = head;
 
-		while (i < size) {
+		while (i <= size) {
 			System.out.println(temp.data + " , " + temp.priority);
 			temp = temp.next;
 			i++;

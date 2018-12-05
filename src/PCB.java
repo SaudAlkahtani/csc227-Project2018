@@ -54,7 +54,7 @@ public class PCB {
 	public void printall() {
 		System.out.println("Process ID " + pid);
 		Queue<Cycle> temp = new Queue<Cycle>();
-
+		System.out.println(Cycles.length());
 		while (Cycles.length() != 0) {
 			Cycle a = Cycles.serve();
 			System.out.println(
