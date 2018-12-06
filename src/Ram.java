@@ -54,7 +54,7 @@ public class Ram {
 	// this method deletes the process with the highest ram memory number
 	public void deleteMaxMemoryProcess(Queue<PCB> waitingQueue) {
 		
-		System.out.println("delete");
+	
 		Queue<PCB> temp = new Queue<PCB>();
 		if (waitingQueue.length() == 0) {
 			return;
@@ -96,7 +96,7 @@ public class Ram {
 	// can't be put in the ready queue then it is put in the waiting queue
 	public PQ<PCB> loadToReadyQueue() {
 		boolean flag = false;
-		System.out.println("load to ready");
+
 		Queue<PCB> temp = new Queue<PCB>();
 		// check if both Queue empty
 		if (jobQueue.length() <= 0 && waitingQueue.length() <= 0) {
@@ -115,7 +115,7 @@ public class Ram {
 				availableSize = availableSize - process.getFirstMemory();
 				process.setStatus("Ready");
 				if(process.getReadyQueueTime()==0) {
-					System.out.println("First time in ready");
+			
 					process.setReadyQueueTime(Timer.time);
 					}
 				readyQueue.enqueue(process, process.getFirstCPU());
@@ -144,7 +144,7 @@ public class Ram {
 
 				availableSize = availableSize - process.getFirstMemory();
 				if(process.getReadyQueueTime()==0) {
-					System.out.println("Second if in ready");
+				
 				process.setReadyQueueTime(Timer.time);
 				}
 				process.setStatus("Ready");
@@ -171,8 +171,7 @@ public class Ram {
 	}
 	// after io this methode is called to put back the process into the ready queue or waiting queue
 	public void addToReadyQueue(PCB process) {
-		System.out.println("add to ready");
-
+		
 		if(process.getCycles().length()==0) {
 			return;
 		}
@@ -182,11 +181,11 @@ public class Ram {
 				this.availableSize = this.availableSize - (process.getFirstMemory());
 				process.setStatus("Ready");
 				if(process.getReadyQueueTime()==0) {
-					System.out.println("WTF");
+					
 					process.setReadyQueueTime(Timer.time);
 					}
 				readyQueue.enqueue(process, process.getFirstCPU());
-				System.err.println("i added something:");
+			
 
 			} else {
 				process.setStatus("Waiting");
