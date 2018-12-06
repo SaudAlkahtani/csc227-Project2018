@@ -1,17 +1,18 @@
-
+	// this class represents every read process from the file.
+	// every process contains cycles depends on how many cpu burst it has. 
 public class PCB {
 	private int pid;
 	private String status;
 	private Queue<Cycle> Cycles;
-	private int CPUNum;
-	private int IONum;
-	private int waitNum;
-	private int CPUSum;
-	private int IOSum;
+	private int CPUNum; // number of times the process has been in cpu
+	private int IONum;	// number of times the process has been in io
+	private int waitNum;// number of times the process has been in waiting queue
+	private int CPUSum; // total time in cpu
+	private int IOSum;	// total time in cpu
 	private int memorySum;
 	private int CPUstartTime;
 	private int CPUendTime;
-	private int readyQueueTime;
+	private int readyQueueTime; // number of times the process has been in ready queue
 	private int endTime;
 
 	public PCB() {
@@ -43,14 +44,14 @@ public class PCB {
 		this.endTime = 0;
 
 	}
-
+	// add process cycles in queue
 	public void addCycle(int cpuBurst, int memory, int IOBurst) {
 
 		Cycle c = new Cycle(cpuBurst, memory, IOBurst);
 		this.Cycles.enqueue(c);
 
 	}
-
+	// print all cycle information
 	public void printall() {
 		System.out.println("Process ID " + pid);
 		Queue<Cycle> temp = new Queue<Cycle>();
