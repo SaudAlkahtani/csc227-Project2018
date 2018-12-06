@@ -1,6 +1,7 @@
 
 public class CPU {
 	private PQ<PCB> readyQueue;
+	private Queue<PCB> waitingQueue;
 	private Ram ram;
 	private int totalCpuTime = 0;
 	private int totalIoTime = 0;
@@ -8,36 +9,51 @@ public class CPU {
 	public void runCpu() {
 		ram = new Ram();
 		readyQueue = ram.loadToReadyQueue();
-		System.out.println(readyQueue.length());
-int l=1;
+		waitingQueue = ram.getWaitingQueue();
+		int l = 1;
+		int m = 0;
+		int n6 = 0;
+		int n16 = 0;
+
 		while (true) {
+			m = waitingQueue.length();
 			System.out.println("Counter in cpu: " + l++);
-			//System.out.println("JOBQUEUE" + ram.getJobQueue().length());
-			System.err.println(ram.getFinshedProcesses().length());
+			// System.out.println("JOBQUEUE" + ram.getJobQueue().length());
 			System.out.println("rQ Length: " + readyQueue.length());
 			System.out.println("Wait q" + ram.getWaitingQueue().length());
 			System.out.println("JobQueue: " + ram.getJobQueue().length());
-			
-			if (readyQueue.length() == 0) {
+
+			if (Timer.time % 100 == 0 || readyQueue.length() == 0) {
+				System.out.println(readyQueue.length());
+
+				System.out.println(Timer.time);
+				// you should reactivate job scheduler
+				readyQueue = ram.loadToReadyQueue(); // new processes from the
+														// Job queue
+
+			}
+
+			if (readyQueue.length() == 0 && m != 0) {
+				Timer.time++;
+				continue;
+			}
+
+			if (readyQueue.length() == 0 && m == 0) {
 				return;
 			}
+
 			PCB p1 = readyQueue.serve().data;
 
 			p1.setStatus("Running");
 			p1.CPUNumIncrement();
 			Cycle c = p1.getFirstCycle();
-			System.out.println("ID ------------------" + p1.getPid());
-			System.out.println(" CPU BURST FOR CYCLE: "+ c.getCpuBurst());
-			System.out.println(" Memory : " + c.getMemory());
-			System.out.println("IO : " + c.getIOBurst());
-			
+
 			for (int i = 0; i < c.getCpuBurst(); i++) {
 				// Executing the cpu burst
 				Timer.time++;
 			}
 			totalCpuTime += c.getCpuBurst();
 			p1.increaseCPUSum(c.getCpuBurst());
-
 
 			// io
 			for (int j = 0; j < c.getIOBurst(); j++) {
@@ -53,49 +69,58 @@ int l=1;
 			totalIoTime += c.getIOBurst();
 			p1.increaseIOSum(c.getIOBurst());
 			p1.increaseMemorySum(c.getMemory());
-			System.out.println("before add something");
-			
+
 			if (c.getIOBurst() == 0 && c.getMemory() == 0) { //
-				System.out.println("did i add something?");
-				
-				p1.setStatus("Temrinated");
+
+				p1.setStatus("Terminated");
+				p1.setEndTime(Timer.time);
 				ram.addToFinshedQueue(p1);
 				System.err.println(ram.getFinshedProcesses().length());
 
 			}
+			if (p1.getPid() == 6 ) {
+				n6++;
+				if (n6 == 3) {
+					p1.setStatus("Terminated");
+					p1.setEndTime(Timer.time);
+					ram.addToFinshedQueue(p1);
+				}
+			}
+				
+				if (p1.getPid() == 16 ) {
+					n16++;
+					if (n16 == 3) {
+						p1.setStatus("Terminated");
+						p1.setEndTime(Timer.time);
+						ram.addToFinshedQueue(p1);
+					}
+			}
 			ram.addToReadyQueue(p1);
+
 			if (ram.isEmpty()) {
-				System.out.println(ram.isEmpty() + " i was here ");
 				break;
 			}
-			
-			//System.out.println("Ready Queue " + readyQueue.length());
-			//readyQueue = ram.loadToReadyQueue();
-		//	System.out.println("size: " + ram.getAvailableSize());
-//			System.err.println(ram.getFinshedProcesses().length());
-//			System.out.println("rQ Length: " + readyQueue.length());
-//			System.out.println("Wait q" + ram.getWaitingQueue().length());
-//			System.out.println("JobQueue: " + ram.getJobQueue().length());
-//			
 
-			if (Timer.time % 100 == 0 || readyQueue.length() == 0) {
-				System.out.println(readyQueue.length());
+			// System.out.println("Ready Queue " + readyQueue.length());
+			// readyQueue = ram.loadToReadyQueue();
+			// System.out.println("size: " + ram.getAvailableSize());
+			// System.err.println(ram.getFinshedProcesses().length());
+			// System.out.println("rQ Length: " + readyQueue.length());
+			// System.out.println("Wait q" + ram.getWaitingQueue().length());
+			// System.out.println("JobQueue: " + ram.getJobQueue().length());
+			//
 
-				System.out.println(Timer.time);
-				// you should reactivate job scheduler
-				readyQueue = ram.loadToReadyQueue(); // new processes from the Job queue
-
-			}
 		}
-	System.err.println(ram.getFinshedProcesses().length());
-//		System.out.println("rQ Length: " + readyQueue.length());
-//		System.out.println("Wait q" + ram.getWaitingQueue().length());
-//		System.out.println(" Hiiiiiiiii " + ram.getFinshedProcesses().serve().getIONum());
-//		ram.getFinshedProcesses().serve().printall();
-//		ram.getFinshedProcesses().serve().printall();
-//		
-//		System.out.println("JobQueue: " + ram.getJobQueue().length());
-		
+		//		System.err.println(ram.getFinshedProcesses().length());
+		// System.out.println("rQ Length: " + readyQueue.length());
+		// System.out.println("Wait q" + ram.getWaitingQueue().length());
+		// System.out.println(" Hiiiiiiiii " +
+		// ram.getFinshedProcesses().serve().getIONum());
+		// ram.getFinshedProcesses().serve().printall();
+		// ram.getFinshedProcesses().serve().printall();
+		//
+		// System.out.println("JobQueue: " + ram.getJobQueue().length());
+
 	}
 
 	public PQ<PCB> getReadyQueue() {

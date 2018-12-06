@@ -18,7 +18,6 @@ public class JobQueue {
 	}
 
 	private Queue<PCB> loadToJobQueue() throws FileNotFoundException {
-System.out.println("in load to jobqueue");
 		try {
 
 			br = new BufferedReader(new FileReader(FILENAME));
@@ -28,17 +27,17 @@ System.out.println("in load to jobqueue");
 			int cpuBurst = 0;
 			int memory = 0;
 			int IOBurst = 0;
-			int counter=0;
+			int counter = 0;
 
 			String sCurrentLine;
 			br.readLine(); // first Line "Name CPU Memory IO " etc..
 			// Cycle contains:
 			// cpuBurst, memory, IOBurst
-			while ((sCurrentLine = br.readLine()) != null && counter!=1) {
-				
+			while ((sCurrentLine = br.readLine()) != null ) {
+
 				// System.out.println(sCurrentLine);
 				String[] PCBInfo = sCurrentLine.split("	");
-				//System.out.println("Length: " + PCBInfo.length);
+				// System.out.println("Length: " + PCBInfo.length);
 				pid = Integer.parseInt(PCBInfo[0]); // Name of Process
 				PCB pcb1 = new PCB(pid);
 				cpuBurst = Integer.parseInt(PCBInfo[1]);
@@ -57,23 +56,22 @@ System.out.println("in load to jobqueue");
 					JobQueue.enqueue(pcb1);
 					continue;
 				}
-					
 
 				cpuBurst = Integer.parseInt(PCBInfo[10]);
 				memory = Integer.parseInt(PCBInfo[11]);
 				IOBurst = Integer.parseInt(PCBInfo[12]);
 				pcb1.addCycle(cpuBurst, memory, IOBurst);// Cycle 4
-				
+
 				if (PCBInfo.length == 14) { // Has only 5 Cycles
-					//System.out.println("--------5Cycles------------");
+					// System.out.println("--------5Cycles------------");
 					cpuBurst = Integer.parseInt(PCBInfo[13]);
 					memory = 0;
 					IOBurst = 0;
 					pcb1.addCycle(cpuBurst, memory, IOBurst);// Cycle 5
-					
+
 				}
 				if (PCBInfo.length == 17) { // if it has a 6th cycles
-				//	System.out.println("-------------6Cycles---------------");
+					// System.out.println("-------------6Cycles---------------");
 					cpuBurst = Integer.parseInt(PCBInfo[13]);
 					memory = Integer.parseInt(PCBInfo[14]);
 					IOBurst = Integer.parseInt(PCBInfo[15]);
@@ -82,7 +80,6 @@ System.out.println("in load to jobqueue");
 					memory = 0;
 					IOBurst = 0;
 					pcb1.addCycle(cpuBurst, memory, IOBurst);// Cycle 6
-					
 
 				}
 
@@ -112,7 +109,7 @@ System.out.println("in load to jobqueue");
 
 			}
 		}
-		
+
 		return JobQueue;
 
 	}
@@ -120,6 +117,7 @@ System.out.println("in load to jobqueue");
 	public Queue<PCB> getProcesses() {
 		try {
 			return this.loadToJobQueue();
+			
 		} catch (FileNotFoundException e) {
 
 			System.err.println("File not found!!");

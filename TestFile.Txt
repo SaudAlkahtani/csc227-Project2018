@@ -1,2 +1,556 @@
-First Line 
- Second line!
+/////////////////////////////// 50
+-------------------------------------------------------------------------------
+The Process ID: 1
+Time it was loaded into the ready queue: 433
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 28
+Number of times it was in the IO: 4
+Total time spent in the IO: 12
+Number of times it was waiting for memory: 0
+Time it terminated or was killed: 455
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 8
+Time it was loaded into the ready queue: 7
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 77
+Number of times it was in the IO: 4
+Total time spent in the IO: 101
+Number of times it was waiting for memory: 0
+Time it terminated or was killed: 1124
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 14
+Time it was loaded into the ready queue: 13
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 70
+Number of times it was in the IO: 4
+Total time spent in the IO: 115
+Number of times it was waiting for memory: 0
+Time it terminated or was killed: 1236
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 34
+Time it was loaded into the ready queue: 33
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 100
+Number of times it was in the IO: 4
+Total time spent in the IO: 129
+Number of times it was waiting for memory: 0
+Time it terminated or was killed: 1264
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 7
+Time it was loaded into the ready queue: 6
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 112
+Number of times it was in the IO: 4
+Total time spent in the IO: 112
+Number of times it was waiting for memory: 0
+Time it terminated or was killed: 1533
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 40
+Time it was loaded into the ready queue: 39
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 110
+Number of times it was in the IO: 4
+Total time spent in the IO: 108
+Number of times it was waiting for memory: 0
+Time it terminated or was killed: 1782
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 39
+Time it was loaded into the ready queue: 38
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 82
+Number of times it was in the IO: 4
+Total time spent in the IO: 85
+Number of times it was waiting for memory: 0
+Time it terminated or was killed: 1864
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 10
+Time it was loaded into the ready queue: 9
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 124
+Number of times it was in the IO: 4
+Total time spent in the IO: 84
+Number of times it was waiting for memory: 0
+Time it terminated or was killed: 1897
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 9
+Time it was loaded into the ready queue: 8
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 71
+Number of times it was in the IO: 4
+Total time spent in the IO: 138
+Number of times it was waiting for memory: 0
+Time it terminated or was killed: 1934
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 12
+Time it was loaded into the ready queue: 1935
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 65
+Number of times it was in the IO: 4
+Total time spent in the IO: 75
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 2241
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 17
+Time it was loaded into the ready queue: 1939
+Number of times it was in the CPU: 6
+Total time spent in the CPU: 121
+Number of times it was in the IO: 5
+Total time spent in the IO: 108
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 2470
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 15
+Time it was loaded into the ready queue: 1937
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 80
+Number of times it was in the IO: 4
+Total time spent in the IO: 127
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 2593
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 13
+Time it was loaded into the ready queue: 1936
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 102
+Number of times it was in the IO: 4
+Total time spent in the IO: 128
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 2782
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 21
+Time it was loaded into the ready queue: 2786
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 90
+Number of times it was in the IO: 4
+Total time spent in the IO: 81
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 3148
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 22
+Time it was loaded into the ready queue: 3150
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 89
+Number of times it was in the IO: 4
+Total time spent in the IO: 135
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 3432
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 26
+Time it was loaded into the ready queue: 3154
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 102
+Number of times it was in the IO: 4
+Total time spent in the IO: 81
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 3754
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 46
+Time it was loaded into the ready queue: 3171
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 115
+Number of times it was in the IO: 4
+Total time spent in the IO: 86
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 3793
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 23
+Time it was loaded into the ready queue: 3795
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 121
+Number of times it was in the IO: 4
+Total time spent in the IO: 37
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 4012
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 28
+Time it was loaded into the ready queue: 0
+Number of times it was in the CPU: 0
+Total time spent in the CPU: 0
+Number of times it was in the IO: 0
+Total time spent in the IO: 0
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 0
+Final state: Killed
+
+-------------------------------------------------------------------------------
+The Process ID: 20
+Time it was loaded into the ready queue: 0
+Number of times it was in the CPU: 0
+Total time spent in the CPU: 0
+Number of times it was in the IO: 0
+Total time spent in the IO: 0
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 0
+Final state: Killed
+
+-------------------------------------------------------------------------------
+The Process ID: 42
+Time it was loaded into the ready queue: 0
+Number of times it was in the CPU: 0
+Total time spent in the CPU: 0
+Number of times it was in the IO: 0
+Total time spent in the IO: 0
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 0
+Final state: Killed
+
+-------------------------------------------------------------------------------
+The Process ID: 24
+Time it was loaded into the ready queue: 0
+Number of times it was in the CPU: 0
+Total time spent in the CPU: 0
+Number of times it was in the IO: 0
+Total time spent in the IO: 0
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 0
+Final state: Killed
+
+-------------------------------------------------------------------------------
+The Process ID: 18
+Time it was loaded into the ready queue: 17
+Number of times it was in the CPU: 1
+Total time spent in the CPU: 2
+Number of times it was in the IO: 1
+Total time spent in the IO: 10
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 0
+Final state: Killed
+
+-------------------------------------------------------------------------------
+The Process ID: 4
+Time it was loaded into the ready queue: 3
+Number of times it was in the CPU: 1
+Total time spent in the CPU: 14
+Number of times it was in the IO: 1
+Total time spent in the IO: 38
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 0
+Final state: Killed
+
+-------------------------------------------------------------------------------
+The Process ID: 48
+Time it was loaded into the ready queue: 4642
+Number of times it was in the CPU: 2
+Total time spent in the CPU: 51
+Number of times it was in the IO: 2
+Total time spent in the IO: 42
+Number of times it was waiting for memory: 2
+Time it terminated or was killed: 0
+Final state: Killed
+
+-------------------------------------------------------------------------------
+The Process ID: 11
+Time it was loaded into the ready queue: 10
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 82
+Number of times it was in the IO: 4
+Total time spent in the IO: 66
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 5056
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 5
+Time it was loaded into the ready queue: 4
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 76
+Number of times it was in the IO: 4
+Total time spent in the IO: 102
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 5320
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 3
+Time it was loaded into the ready queue: 2
+Number of times it was in the CPU: 1
+Total time spent in the CPU: 19
+Number of times it was in the IO: 1
+Total time spent in the IO: 18
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 0
+Final state: Killed
+
+-------------------------------------------------------------------------------
+The Process ID: 33
+Time it was loaded into the ready queue: 5429
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 114
+Number of times it was in the IO: 4
+Total time spent in the IO: 149
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 5712
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 49
+Time it was loaded into the ready queue: 5784
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 91
+Number of times it was in the IO: 4
+Total time spent in the IO: 58
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 5944
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 6
+Time it was loaded into the ready queue: 5
+Number of times it was in the CPU: 3
+Total time spent in the CPU: 27
+Number of times it was in the IO: 3
+Total time spent in the IO: 121
+Number of times it was waiting for memory: 2
+Time it terminated or was killed: 6038
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 16
+Time it was loaded into the ready queue: 2783
+Number of times it was in the CPU: 1
+Total time spent in the CPU: 10
+Number of times it was in the IO: 1
+Total time spent in the IO: 38
+Number of times it was waiting for memory: 2
+Time it terminated or was killed: 0
+Final state: Killed
+
+-------------------------------------------------------------------------------
+The Process ID: 32
+Time it was loaded into the ready queue: 6197
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 82
+Number of times it was in the IO: 4
+Total time spent in the IO: 154
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 6451
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 35
+Time it was loaded into the ready queue: 6452
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 90
+Number of times it was in the IO: 4
+Total time spent in the IO: 96
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 6795
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 25
+Time it was loaded into the ready queue: 4015
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 82
+Number of times it was in the IO: 4
+Total time spent in the IO: 118
+Number of times it was waiting for memory: 2
+Time it terminated or was killed: 6862
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 45
+Time it was loaded into the ready queue: 0
+Number of times it was in the CPU: 0
+Total time spent in the CPU: 0
+Number of times it was in the IO: 0
+Total time spent in the IO: 0
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 0
+Final state: Killed
+
+-------------------------------------------------------------------------------
+The Process ID: 27
+Time it was loaded into the ready queue: 4627
+Number of times it was in the CPU: 1
+Total time spent in the CPU: 20
+Number of times it was in the IO: 1
+Total time spent in the IO: 47
+Number of times it was waiting for memory: 2
+Time it terminated or was killed: 0
+Final state: Killed
+
+-------------------------------------------------------------------------------
+The Process ID: 29
+Time it was loaded into the ready queue: 5057
+Number of times it was in the CPU: 3
+Total time spent in the CPU: 38
+Number of times it was in the IO: 3
+Total time spent in the IO: 46
+Number of times it was waiting for memory: 2
+Time it terminated or was killed: 0
+Final state: Killed
+
+-------------------------------------------------------------------------------
+The Process ID: 43
+Time it was loaded into the ready queue: 7086
+Number of times it was in the CPU: 1
+Total time spent in the CPU: 13
+Number of times it was in the IO: 1
+Total time spent in the IO: 18
+Number of times it was waiting for memory: 2
+Time it terminated or was killed: 0
+Final state: Killed
+
+-------------------------------------------------------------------------------
+The Process ID: 44
+Time it was loaded into the ready queue: 7087
+Number of times it was in the CPU: 6
+Total time spent in the CPU: 90
+Number of times it was in the IO: 5
+Total time spent in the IO: 125
+Number of times it was waiting for memory: 2
+Time it terminated or was killed: 7593
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 47
+Time it was loaded into the ready queue: 7224
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 119
+Number of times it was in the IO: 4
+Total time spent in the IO: 83
+Number of times it was waiting for memory: 1
+Time it terminated or was killed: 7630
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 19
+Time it was loaded into the ready queue: 2784
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 103
+Number of times it was in the IO: 4
+Total time spent in the IO: 127
+Number of times it was waiting for memory: 2
+Time it terminated or was killed: 7761
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 31
+Time it was loaded into the ready queue: 6039
+Number of times it was in the CPU: 1
+Total time spent in the CPU: 11
+Number of times it was in the IO: 1
+Total time spent in the IO: 22
+Number of times it was waiting for memory: 2
+Time it terminated or was killed: 0
+Final state: Killed
+
+-------------------------------------------------------------------------------
+The Process ID: 36
+Time it was loaded into the ready queue: 5716
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 96
+Number of times it was in the IO: 4
+Total time spent in the IO: 84
+Number of times it was waiting for memory: 2
+Time it terminated or was killed: 8047
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 38
+Time it was loaded into the ready queue: 6043
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 109
+Number of times it was in the IO: 4
+Total time spent in the IO: 125
+Number of times it was waiting for memory: 2
+Time it terminated or was killed: 8240
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 37
+Time it was loaded into the ready queue: 6601
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 74
+Number of times it was in the IO: 4
+Total time spent in the IO: 94
+Number of times it was waiting for memory: 2
+Time it terminated or was killed: 8471
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 2
+Time it was loaded into the ready queue: 1
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 80
+Number of times it was in the IO: 4
+Total time spent in the IO: 89
+Number of times it was waiting for memory: 2
+Time it terminated or was killed: 8587
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 41
+Time it was loaded into the ready queue: 6863
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 80
+Number of times it was in the IO: 4
+Total time spent in the IO: 111
+Number of times it was waiting for memory: 2
+Time it terminated or was killed: 8663
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 30
+Time it was loaded into the ready queue: 5321
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 79
+Number of times it was in the IO: 4
+Total time spent in the IO: 111
+Number of times it was waiting for memory: 3
+Time it terminated or was killed: 8835
+Final state: Terminated
+
+-------------------------------------------------------------------------------
+The Process ID: 50
+Time it was loaded into the ready queue: 7401
+Number of times it was in the CPU: 5
+Total time spent in the CPU: 88
+Number of times it was in the IO: 4
+Total time spent in the IO: 118
+Number of times it was waiting for memory: 3
+Time it terminated or was killed: 8869
+Final state: Terminated
+
+
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  
+CPU Utilization is:38.32%
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 

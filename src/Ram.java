@@ -112,7 +112,10 @@ public class Ram {
 
 				availableSize = availableSize - process.getFirstMemory();
 				process.setStatus("Ready");
-				
+				if(process.getReadyQueueTime()==0) {
+					System.out.println("First time in ready");
+					process.setReadyQueueTime(Timer.time);
+					}
 				readyQueue.enqueue(process, process.getFirstCPU());
 			} else {
 				temp.enqueue(process);
@@ -138,6 +141,10 @@ public class Ram {
 			if (process.getFirstMemory() <= availableSize) {
 
 				availableSize = availableSize - process.getFirstMemory();
+				if(process.getReadyQueueTime()==0) {
+					System.out.println("Second if in ready");
+				process.setReadyQueueTime(Timer.time);
+				}
 				process.setStatus("Ready");
 				readyQueue.enqueue(process, process.getFirstCPU());
 
@@ -172,6 +179,10 @@ public class Ram {
 
 				this.availableSize = this.availableSize - (process.getFirstMemory());
 				process.setStatus("Ready");
+				if(process.getReadyQueueTime()==0) {
+					System.out.println("WTF");
+					process.setReadyQueueTime(Timer.time);
+					}
 				readyQueue.enqueue(process, process.getFirstCPU());
 				System.err.println("i added something:");
 
