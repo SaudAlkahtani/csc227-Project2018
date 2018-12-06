@@ -3,6 +3,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+//This class represents the Job Queue which loads processes from the "Harddisk"
+//Which the text file "cpumemoryio.txt"
 public class JobQueue {
 	private static final String FILENAME = "src//cpumemoryio.txt";
 	private BufferedReader br;
@@ -16,7 +18,7 @@ public class JobQueue {
 		JobQueue = new Queue<PCB>();
 
 	}
-
+	//This method loops through the file and creates processes and cycles for each process
 	private Queue<PCB> loadToJobQueue() throws FileNotFoundException {
 		try {
 
@@ -35,13 +37,12 @@ public class JobQueue {
 			// cpuBurst, memory, IOBurst
 			while ((sCurrentLine = br.readLine()) != null ) {
 
-				// System.out.println(sCurrentLine);
-				String[] PCBInfo = sCurrentLine.split("	");
-				// System.out.println("Length: " + PCBInfo.length);
+				
+				String[] PCBInfo = sCurrentLine.split("	");		
 				pid = Integer.parseInt(PCBInfo[0]); // Name of Process
 				PCB pcb1 = new PCB(pid);
 				cpuBurst = Integer.parseInt(PCBInfo[1]);
-				memory = Math.abs(Integer.parseInt(PCBInfo[2]));
+				memory = Math.abs(Integer.parseInt(PCBInfo[2])); //First memory should be positive
 				IOBurst = Integer.parseInt(PCBInfo[3]);
 				pcb1.addCycle(cpuBurst, memory, IOBurst);// Cycle 1
 				cpuBurst = Integer.parseInt(PCBInfo[4]);
@@ -63,7 +64,7 @@ public class JobQueue {
 				pcb1.addCycle(cpuBurst, memory, IOBurst);// Cycle 4
 
 				if (PCBInfo.length == 14) { // Has only 5 Cycles
-					// System.out.println("--------5Cycles------------");
+					
 					cpuBurst = Integer.parseInt(PCBInfo[13]);
 					memory = 0;
 					IOBurst = 0;
@@ -71,7 +72,7 @@ public class JobQueue {
 
 				}
 				if (PCBInfo.length == 17) { // if it has a 6th cycles
-					// System.out.println("-------------6Cycles---------------");
+					
 					cpuBurst = Integer.parseInt(PCBInfo[13]);
 					memory = Integer.parseInt(PCBInfo[14]);
 					IOBurst = Integer.parseInt(PCBInfo[15]);
@@ -113,7 +114,7 @@ public class JobQueue {
 		return JobQueue;
 
 	}
-
+	//Returns the job queue with loaded processes from the file
 	public Queue<PCB> getProcesses() {
 		try {
 			return this.loadToJobQueue();

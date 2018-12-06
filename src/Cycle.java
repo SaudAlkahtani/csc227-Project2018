@@ -1,4 +1,6 @@
-
+//This class represents a cycle in the first process,
+//a cycle consists of "CPU Burst,Memory requirement,IO wait time" 
+//each process has number of cycles.
 public class Cycle {
 
 	private int cpuBurst;

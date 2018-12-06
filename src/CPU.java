@@ -6,27 +6,21 @@ public class CPU {
 	private int totalCpuTime = 0;
 	private int totalIoTime = 0;
 
+	//This method is used to "execute" the processes in the Ready Queue
 	public void runCpu() {
 		ram = new Ram();
 		readyQueue = ram.loadToReadyQueue();
 		waitingQueue = ram.getWaitingQueue();
 		int l = 1;
-		int m = 0;
+		int m = 0; //Number of waiting processes in waiting queue
 		int n6 = 0;
 		int n16 = 0;
 
 		while (true) {
 			m = waitingQueue.length();
-			System.out.println("Counter in cpu: " + l++);
-			// System.out.println("JOBQUEUE" + ram.getJobQueue().length());
-			System.out.println("rQ Length: " + readyQueue.length());
-			System.out.println("Wait q" + ram.getWaitingQueue().length());
-			System.out.println("JobQueue: " + ram.getJobQueue().length());
-
+			
+			//each 100 Cycle reactivate the Long term scheduler
 			if (Timer.time % 100 == 0 || readyQueue.length() == 0) {
-				System.out.println(readyQueue.length());
-
-				System.out.println(Timer.time);
 				// you should reactivate job scheduler
 				readyQueue = ram.loadToReadyQueue(); // new processes from the
 														// Job queue
@@ -42,23 +36,21 @@ public class CPU {
 				return;
 			}
 
-			PCB p1 = readyQueue.serve().data;
+			PCB p1 = readyQueue.serve().data; //First process to be executed
 
 			p1.setStatus("Running");
 			p1.CPUNumIncrement();
 			Cycle c = p1.getFirstCycle();
 
-			for (int i = 0; i < c.getCpuBurst(); i++) {
+			for (int i = 0; i < c.getCpuBurst(); i++) { //Executing first cycle
 				// Executing the cpu burst
 				Timer.time++;
 			}
 			totalCpuTime += c.getCpuBurst();
 			p1.increaseCPUSum(c.getCpuBurst());
 
-			// io
+			// waiting for io
 			for (int j = 0; j < c.getIOBurst(); j++) {
-				// waiting for io
-
 				Timer.time++;
 				p1.setStatus("Waiting");
 
@@ -70,15 +62,15 @@ public class CPU {
 			p1.increaseIOSum(c.getIOBurst());
 			p1.increaseMemorySum(c.getMemory());
 
-			if (c.getIOBurst() == 0 && c.getMemory() == 0) { //
+			if (c.getIOBurst() == 0 && c.getMemory() == 0) { //This is the last cycle for this process
 
 				p1.setStatus("Terminated");
 				p1.setEndTime(Timer.time);
 				ram.addToFinshedQueue(p1);
-				System.err.println(ram.getFinshedProcesses().length());
+				
 
 			}
-			if (p1.getPid() == 6 ) {
+			if (p1.getPid() == 6 ) { //Special Case with process 6
 				n6++;
 				if (n6 == 3) {
 					p1.setStatus("Terminated");
@@ -87,7 +79,7 @@ public class CPU {
 				}
 			}
 				
-				if (p1.getPid() == 16 ) {
+				if (p1.getPid() == 16 ) { //Special Case with process 16
 					n16++;
 					if (n16 == 3) {
 						p1.setStatus("Terminated");
@@ -95,31 +87,15 @@ public class CPU {
 						ram.addToFinshedQueue(p1);
 					}
 			}
-			ram.addToReadyQueue(p1);
+			ram.addToReadyQueue(p1); //After executing the cycle , return process to ready queue
 
 			if (ram.isEmpty()) {
 				break;
 			}
 
-			// System.out.println("Ready Queue " + readyQueue.length());
-			// readyQueue = ram.loadToReadyQueue();
-			// System.out.println("size: " + ram.getAvailableSize());
-			// System.err.println(ram.getFinshedProcesses().length());
-			// System.out.println("rQ Length: " + readyQueue.length());
-			// System.out.println("Wait q" + ram.getWaitingQueue().length());
-			// System.out.println("JobQueue: " + ram.getJobQueue().length());
-			//
 
 		}
-		//		System.err.println(ram.getFinshedProcesses().length());
-		// System.out.println("rQ Length: " + readyQueue.length());
-		// System.out.println("Wait q" + ram.getWaitingQueue().length());
-		// System.out.println(" Hiiiiiiiii " +
-		// ram.getFinshedProcesses().serve().getIONum());
-		// ram.getFinshedProcesses().serve().printall();
-		// ram.getFinshedProcesses().serve().printall();
-		//
-		// System.out.println("JobQueue: " + ram.getJobQueue().length());
+	
 
 	}
 
